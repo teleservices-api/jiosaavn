@@ -1,0 +1,30 @@
+{
+  "name": "Jiosaavn Bot",
+  "description": "This is a advance telegram bot to search and download Jiosaavn songs",
+  "repository": "https://github.com/teleservices-api/jiosaavn",
+  "logo": "https://telegra.ph/file/668e019e93b622b467e7d.jpg",
+  "keywords": [
+    "Best",
+    "Jiosaavn",
+    "Songs",
+    "Telegram Bot"
+   ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Get it from @BotFather"
+    },
+    "API_ID": {
+      "description": "Your API_ID, Get it from https://my.telegram.org/"
+    },
+    "API_HASH": {
+      "description": "Your API_HASH, Get it from https://my.telegram.org/"
+    },
+    "DATABASE_URL": {
+      "description": "Mongodb token for saving the users data",
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {"url": "heroku/python"}
+  ]
+}

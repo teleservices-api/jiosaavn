@@ -1,0 +1,9 @@
+motor
+uvloop
+aiofiles
+dnspython
+pyrofork
+humanfriendly
+python-dotenv
+tgcrypto-pyrofork
+aiohttp[speedups]
