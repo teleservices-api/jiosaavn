@@ -9,30 +9,31 @@ logger = logging.getLogger(__name__)
 
 @Bot.on_callback_query(filters.regex('^home$'))
 @Bot.on_message(filters.command('start') & filters.private & filters.incoming)
-async def start_handler(client: Bot, message: Message | CallbackQuery):
+async def start_handler(client: Bot, message: Message|CallbackQuery):
+    ##### Mention user
+    last_name = f' {m.from_user.last_name}' if m.from_user.last_name else ''
+    mention = f"[{m.from_user.first_name}{last_name}](tg://user?id={m.from_user.id})"
     text = (
-        f"Hello {message.from_user.mention},\n\n"
-        "Welcome to the JioSaavn Telegram Bot! "
-        "This powerful bot allows you to search and download songs, playlists, albums, and artists directly from JioSaavn.\n\n"
-        "With this bot, you can:\n"
-        "- Search for songs, albums, playlists, and artists\n"
-        "- Download your favorite tracks directly to Telegram\n"
-        "- Explore various features tailored to enhance your music experience\n\n"
-        "**Maintained By:** [TECHS CODER](https://t.me/TECHSCODER)"
+        f<blockquote>"**Hello {mention},**\n\n<blockquote>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴊɪᴏsᴀᴀᴠɴ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ! ᴛʜɪs ᴘᴏᴡᴇʀғᴜʟ ʙᴏᴛ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ sᴇᴀʀᴄʜ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴏɴɢs, ᴘʟᴀʏʟɪsᴛs, ᴀʟʙᴜᴍs, ᴀɴᴅ ᴀʀᴛɪsᴛs ᴅɪʀᴇᴄᴛʟʏ ғʀᴏᴍ ᴊɪᴏsᴀᴀᴠɴ.</blockquote>\n\n"
+        "**With this Bot, you can:**\n\n"
+        "__- Search for songs, albums, playlists, and artists__\n"
+        "__- Download your favorite tracks directly to Telegram__\n"
+        "__- Explore various features tailored to enhance your music experience__\n\n"
+        "**Maintained By:** [techscoder](https://t.me/techscoder)"
     )
-
     buttons = [[
-        InlineKeyboardButton('My Father 🧑', url='https://t.me/TECHSCODER'),
+        InlineKeyboardButton('Owner 🧑', url='https://t.me/techscoder'),
         InlineKeyboardButton('About 📕', callback_data='about')
-    ], [
+        ],[
         InlineKeyboardButton('Help 💡', callback_data='help'),
         InlineKeyboardButton('Settings ⚙', callback_data='settings')
+        ],[
+        InlineKeyboardButton('Open Source Repository 🌐', url='https://github.com/teleservices-api/jiosaavn')
     ]]
-    
     if isinstance(message, Message):
-        await message.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons), quote=True, disable_web_page_preview=True)
+        await message.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons), quote=True)
     else:
-        await message.message.edit(text, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+        await message.message.edit(text, reply_markup=InlineKeyboardMarkup(buttons))
 
 @Bot.on_callback_query(filters.regex('^help$'))
 @Bot.on_message(filters.command('help') & filters.private & filters.incoming)
@@ -67,8 +68,9 @@ async def about(client: Bot, message: Message|CallbackQuery):
         f"**🤖 Bot Name:** {me.mention()}\n\n"
         "**📝 Language:** [Python 3](https://www.python.org/)\n\n"
         "**🧰 Framework:** [Pyrogram](https://github.com/pyrogram/pyrogram)\n\n"
-        "**👨‍💻 Developer:** [TECHS CODER](https://t.me/TECHSCODER)\n\n"
-        "**📢 Updates Channel:** [TELESERVICES API](https://t.me/TELESERVICES_API)\n\n"
+        "**👨‍💻 Developer:** [techscoder](https://t.me/techscoder)\n\n"
+        "**📢 Updates Channel:** [Teleservice Api](https://t.me/Teleservices_Api)\n\n"
+        "**🔗 Source Code:** [GitHub Repository](https://github.com/teleservices-api/jiosaavn)\n\n"
     )
 
     buttons = [[
