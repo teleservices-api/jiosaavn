@@ -9,18 +9,18 @@ logger = logging.getLogger(__name__)
 
 @Bot.on_callback_query(filters.regex('^home$'))
 @Bot.on_message(filters.command('start') & filters.private & filters.incoming)
-async def start_handler(client: Bot, message: Message|CallbackQuery):
+async def start_handler(client: Bot, message: Message | CallbackQuery):
     ##### Mention user
-    last_name = f' {m.from_user.last_name}' if m.from_user.last_name else ''
-    mention = f"[{m.from_user.first_name}{last_name}](tg://user?id={m.from_user.id})"
+    last_name = f' {message.from_user.last_name}' if message.from_user.last_name else ''
+    mention = f"[{message.from_user.first_name}{last_name}](tg://user?id={message.from_user.id})"
     text = (
-        f<blockquote>"**Hello {mention},**\n\n<blockquote>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴊɪᴏsᴀᴀᴠɴ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ! ᴛʜɪs ᴘᴏᴡᴇʀғᴜʟ ʙᴏᴛ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ sᴇᴀʀᴄʜ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴏɴɢs, ᴘʟᴀʏʟɪsᴛs, ᴀʟʙᴜᴍs, ᴀɴᴅ ᴀʀᴛɪsᴛs ᴅɪʀᴇᴄᴛʟʏ ғʀᴏᴍ ᴊɪᴏsᴀᴀᴠɴ.</blockquote>\n\n"
+        f"**Hello {mention},**\n\n"
+        "<blockquote>ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴊɪᴏsᴀᴀᴠɴ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ! ᴛʜɪs ᴘᴏᴡᴇʀғᴜʟ ʙᴏᴛ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ sᴇᴀʀᴄʜ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ sᴏɴɢs, ᴘʟᴀʏʟɪsᴛs, ᴀʟʙᴜᴍs, ᴀɴᴅ ᴀʀᴛɪsᴛs ᴅɪʀᴇᴄᴛʟʏ ғʀᴏᴍ ᴊɪᴏsᴀᴀᴠɴ.</blockquote>\n\n"
         "**With this Bot, you can:**\n\n"
         "__- Search for songs, albums, playlists, and artists__\n"
         "__- Download your favorite tracks directly to Telegram__\n"
         "__- Explore various features tailored to enhance your music experience__\n\n"
         "**Maintained By:** [techscoder](https://t.me/techscoder)"
-
     )
 
     buttons = [[
