@@ -42,10 +42,9 @@ A Python Telegram bot leveraging the Pyrofork library to search and upload songs
 
 ## Running Methods
 
-1. **Deploy to Heroku**:
-   Click the button below to deploy to Heroku.
+1. **Deploy to Koyeb**:
+    [![](https://img.shields.io/badge/Click_here-blue)](https://github.com/teleservices-api/jiosaavn#features)
 
-   [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&builder=buildpack&repository=https://github.com/teleservices-api/jiosaavn&branch=main&name=jiosaavn-api&run_command=python3%20-m%20jiosaavn&env=DATABASE_URL=<your_database_url>&env=BOT_TOKEN=<your_bot_token>&env=API_HASH=<your_api_hash>&env=API_ID=<your_api_id>)
 2. **Local Setup**:
    - Ensure you have Python and pip installed.
    - Follow the Installation steps above.
@@ -54,6 +53,21 @@ A Python Telegram bot leveraging the Pyrofork library to search and upload songs
 
 - [Pyrofork](https://pyrofork.mayuri.my.id/main/)
 - Custom JioSaavn API
+
+## How to Deploy
+
+1. Click the **Deploy to Koyeb** button below.
+2. On the Koyeb UI, you'll be asked to fill in the environment variables.
+
+   The required environment variables are:
+   - `DATABASE_URL`: Your database connection URL.
+   - `BOT_TOKEN`: Your bot token for Telegram API.
+   - `API_HASH`: Your API hash for the Telegram API.
+   - `API_ID`: Your API ID for the Telegram API.
+
+3. Once the environment variables are set, click **Deploy** to deploy the application.
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&builder=buildpack&repository=https://github.com/teleservices-api/jiosaavn&branch=main&name=jiosaavn-api&run_command=python3%20-m%20jiosaavn)
 
 ## Contributing
 
