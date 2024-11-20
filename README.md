@@ -45,7 +45,7 @@ A Python Telegram bot leveraging the Pyrofork library to search and upload songs
 1. **Deploy to Heroku**:
    Click the button below to deploy to Heroku.
 
-   [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&builder=buildpack&repository=https://github.com/teleservices-api/jiosaavn&branch=main&name=jiosaavn-api&run_command=python3%20-m%20jiosaavn)
+   [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&builder=buildpack&repository=https://github.com/teleservices-api/jiosaavn&branch=main&name=jiosaavn-api&run_command=python3%20-m%20jiosaavn&env=DATABASE_URL=<your_database_url>&env=BOT_TOKEN=<your_bot_token>&env=API_HASH=<your_api_hash>&env=API_ID=<your_api_id>)
 2. **Local Setup**:
    - Ensure you have Python and pip installed.
    - Follow the Installation steps above.
