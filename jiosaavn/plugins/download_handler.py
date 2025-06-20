@@ -64,7 +64,7 @@ async def download(client: Bot, message: Message|CallbackQuery):
         await msg.edit("Artists and Podcast upload not supported.")
         return
 
-    if "Failed" not in msg.text:
+    if getattr(msg, "text", None) and "Failed" not in msg.text:
         await msg.delete()
 
 async def download_tool(client: Bot, message: Message|CallbackQuery, msg: Message, song_id: str):
